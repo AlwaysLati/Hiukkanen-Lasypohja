@@ -1,0 +1,99 @@
+%\documentclass[a4paper, 10pt]{article}
+\documentclass[12pt]{extarticle}
+\usepackage[utf8]{inputenc}
+
+\usepackage[print, 1to1]{booklet}
+\usepackage{afterpage}
+\usepackage{pdfpages}
+\usepackage{comment}
+\usepackage{censor}
+
+\setlength{\paperwidth}{276.86mm}
+\setlength{\paperheight}{391.57mm}
+\setlength{\topmargin}{1in}
+\setlength{\textheight}{13in}
+
+% \setlength{\oddsidemargin}{-0.2in}
+% \setlength{\evensidemargin}{-0.2in}
+%\setlength{\textwidth}{4.0in}
+
+\usepackage{amsmath, amsfonts}
+\usepackage{ifthen}
+\usepackage{graphicx}
+\usepackage{changepage}
+\usepackage[document]{ragged2e}
+
+% Poistaa sivunumeroinnin
+\pagenumbering{gobble}
+
+% Uusi komento laulujen otsikoille ja numeroinnille
+\newcommand{\song}[2]{\section{#1}
+    \ifx&#2&%
+    \else
+        \vspace{-1mm}
+        \textit{\large #2}\\
+        \vspace{4mm}
+    \fi
+}
+
+% Uusi komento tyhjälle sivulle
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+
+%%%%
+\title{\Huge{Läsypohja}}
+\date{12.8.24}
+\author{Lauri Uosukainen}
+%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{titlepage}
+    %\maketitle{}
+    \begin{figure}[b!]
+        \centering
+        \scalebox{1}[1]{}%\includegraphics[width=0.9\textwidth]{kansi-3}}
+    \end{figure}
+\end{titlepage}
+
+% Kansikuva A4 kokoisena pdf muodossa
+\includepdf[pages={1},pagecommand={},offset=2.5cm -2.2cm]{lasy_kansi.pdf}
+
+\newpage
+% Ohjelma
+\input{ohjelma.tex}
+
+\newpage
+\centering
+
+\input{rasputin/3063_hyvat_ystavat}
+
+\input{rasputin/71_krokotiili_genan_syntymapaivalaulu}
+
+\input{rasputin/3091_jallutahti}
+
+\newpage
+
+\input{ei_raspu/konduktoori_kelpo_kalle}
+
+\input{rasputin/3011_ken_ompi_fuksi}
+
+\input{rasputin/14_ikuisen_teekkarin_laulu.tex}
+
+% Pakottaa sisällysluettelon viimeiselle sivulle
+\newpage
+\text{}
+\newpage
+
+% Sisällysluettelo
+\renewcommand*\contentsname{Sisällysluettelo}
+\begin{adjustwidth}{3cm}{0cm}
+    \tableofcontents
+\end{adjustwidth}
+
+\end{document}
