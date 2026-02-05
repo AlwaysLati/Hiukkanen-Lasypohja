@@ -27,7 +27,9 @@
 \pagenumbering{gobble}
 
 % Uusi komento laulujen otsikoille ja numeroinnille
-\newcommand{\song}[2]{\section{#1}
+\newcommand{\song}[2]{
+    \section{#1}
+    
     \ifx&#2&%
     \else
         \vspace{-1mm}
@@ -75,13 +77,15 @@
 
 \input{rasputin/71_krokotiili_genan_syntymapaivalaulu}
 
+\newpage
+
 \input{rasputin/3091_jallutahti}
 
 \newpage
 
-\input{ei_raspu/kauppakeskus_duon_kulmal_blues}
-
 \input{rasputin/3011_ken_ompi_fuksi}
+
+\newpage
 
 \input{rasputin/14_ikuisen_teekkarin_laulu.tex}
 
